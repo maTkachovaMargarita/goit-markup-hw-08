@@ -1,0 +1,42 @@
+@mixin btn($width) {
+    min-width: $width;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    padding: 0;
+
+    background-color: var(--accent-color);
+    color: var(--body-background-color);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: center;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        background-color: var(--button-hover-color);
+    }
+}
+
+@mixin mobile {
+    @media screen and (min-width: 480px){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1200px){
+        @content;
+    }
+}
